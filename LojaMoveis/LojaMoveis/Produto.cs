@@ -22,6 +22,11 @@ namespace LojaMoveis
             return this.preco;
         }
 
+        public int getCodigo()
+        {
+            return this.codigo;
+        }
+
         public override string ToString()
         {
             return codigo.ToString() + ", " + descricao + ", " + preco.ToString("F2", CultureInfo.InvariantCulture);

@@ -20,10 +20,26 @@ namespace LojaMoveis
         public double valorTotal()
         {
             double precototal = 0;
-            foreach (ItemPedido item in itemPedidos) {
+            foreach (ItemPedido item in itemPedidos)
+            {
                 precototal = precototal + item.subTotal();
             }
             return precototal;
+        }
+
+        public void addItemPedido(ItemPedido itempedido)
+        {
+            this.itemPedidos.Add(itempedido);
+        }
+
+        public override string ToString()
+        {
+            String resp = "Pedido " + codigo + ", data: " + data.ToString() + "\n";
+            foreach (ItemPedido item in itemPedidos)
+            {
+                resp = resp + item.ToString();
+            }
+            return resp;
         }
     }
 }

@@ -19,7 +19,12 @@ namespace LojaMoveis
 
         public double subTotal()
         {
-            return this.quantidade * produto.getPreco();
+            return this.quantidade * produto.getPreco()*porcentagemDesconto/100;
+        }
+
+        public override string ToString()
+        {
+            return produto.ToString() + "Desconto: " + this.porcentagemDesconto + "Quantidade: " + this.quantidade + "Subtotal: " + subTotal();
         }
     }
 }
